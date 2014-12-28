@@ -1,11 +1,14 @@
 
 include $(TOPOST_PROJ_PATH)/makefile.comm
 
-OUTPUT = index.html
+WIKI = $(wildcard *.wiki)
+HTML = $(WIKI:%.wiki=%.html)
+DIRS = $(HTML:%.html=%)
 
-html: $(OUTPUT)
+html: $(HTML)
 	$(MAKE) -f makefile.subdir
 
 clean:
-	rm -f $(OUTPUT)
+	rm -f $(HTML) 
+	rm -fr $(DIRS)
 	$(MAKE) -f makefile.subdir clean
