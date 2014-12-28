@@ -1,0 +1,4 @@
+
+include $(TOPOST_PROJ_PATH)/makefile.dir
+
+DIRS = 2015/

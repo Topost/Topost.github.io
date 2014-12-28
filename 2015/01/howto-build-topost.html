@@ -1,0 +1,34 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<link rel="Stylesheet" type="text/css" href="../../style.css">
+<title>Howto build TOPost</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head>
+<body>
+
+
+<h1 id="toc_1">TOPost搭建日志</h1>
+
+<h2 id="toc_1.1">获取空间</h2>
+<p>
+TOPost使用Github Pages做为网站部署空间（是的，纯静态）。
+</p>
+
+<h2 id="toc_1.2">域名绑定</h2>
+<p>
+TOPost使用万网域名供应商提供域名解析，暂时使用topost.haama.net域名。
+</p>
+
+<h2 id="toc_1.3">SSHkeys实现无密码pull/push</h2>
+<p>
+TOPost笔者为了省去每次push时的密码输入过程，使用了ssh keys方式进行push/pull，也为后续自动化构建建立基础。
+</p>
+
+<h2 id="toc_1.4">使用make构建html</h2>
+<p>
+TOPost使用Vimwiki进行文档管理，为了能够做到按需转换wiki到html，TOPost使用make技术实现。
+</p>
+
+</body>
+</html>

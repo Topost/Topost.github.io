@@ -1,0 +1,23 @@
+
+#
+# 
+#
+
+##########################################################
+.SUFFIXES: .html .wiki
+
+# wiki转html方法一:
+# (1) wiki转换html耗时达2s+
+# (2) 终端会输出警告: "Vim: Warning: Output is not to a terminal"
+#.wiki.html:
+#	@res=`vim -c "call vimwiki#html#Wiki2HTML(expand(VimwikiGet('path_html')),expand('%'))|q" $<` \
+#	|| (echo -e "[$$PWD/$<] \e[31;1m=>\e[0m [$$PWD/$@] [\e[31;1mFAIL\e[0m]" ; false) \
+#	&& (echo -e "[$$PWD/$<] \e[31;1m=>\e[0m [$$PWD/$@] [\e[32;1mSUCC\e[0m]" ; true)
+
+# wiki转html方法二:
+# 本方法比方法一要快很多，但要注意：
+# (1) vim成功返回时，$?的值是1，所以echo前面是||，而非&&
+.wiki.html:
+	vim -e $< -c "call vimwiki#html#Wiki2HTML(expand(VimwikiGet('path_html')),expand('%'))|q" >/dev/null \
+	|| echo -e "[$$PWD/$<] \e[31;1m=>\e[0m [$$PWD/$@] [\e[32;1mSUCC\e[0m]" 
+

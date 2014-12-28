@@ -1,0 +1,19 @@
+
+# 
+# 提供make 及 make clean于DIRS宏列出的子目录
+# 常用于子模块的编译(如common)
+#
+
+DIRS = 
+
+default:
+	@for subdir in $(DIRS); \
+	do \
+		$(MAKE) -C "$$subdir";\
+	done
+
+clean:
+	@for subdir in $(DIRS); \
+	do \
+		$(MAKE) clean -C "$$subdir";\
+	done
