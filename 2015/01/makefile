@@ -1,9 +1,12 @@
 
 include $(TOPOST_PROJ_PATH)/makefile.comm
 
-OUTPUT = howto-build-topost.html
+WIKI = $(wildcard *.wiki)
+HTML = $(WIKI:%.wiki=%.html)
+DIRS = $(HTML:%.html=%)
 
-html: $(OUTPUT)
+html: $(HTML)
 
 clean:
-	rm -f $(OUTPUT)
+	rm -f $(HTML) 
+	rm -fr $(DIRS)
