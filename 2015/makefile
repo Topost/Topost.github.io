@@ -1,4 +1,4 @@
 
-include $(TOPOST_PROJ_PATH)/makefile.dir
+include ../makefile.dir
 
 DIRS = 01/
